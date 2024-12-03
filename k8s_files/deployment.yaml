@@ -1,0 +1,23 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: yasminecloud-app
+  labels:
+    app: yasminecloud-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: yasminecloud-app
+  template:
+    metadata:
+      labels:
+        app: yasminecloud-app
+    spec:
+      containers:
+      - name: yasminecloud-container
+        image: 329592261141.dkr.ecr.us-east-1.amazonaws.com/amazon-prime:1
+        ports:
+        - containerPort: 3000
+...
